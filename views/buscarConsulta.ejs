@@ -155,17 +155,18 @@
                             <br>  
                             <input type="text" class="form-control my-4 py-2" name="nombreProducto" id="nombreProducto" value="<%= result.nombreProducto %>">
                             <br>
-                            <!-- <input type="datetime" class="form-control my-4 py-2" name="fechaEntrega" id="fechaEntrega" value="<%= result.fechaEntrega %>"> 
-                            <br> -->
+                            <input type="datetime" class="form-control my-4 py-2" name="fechaEntrega" id="fechaEntrega" value="<%= result.fechaEntrega %>"> 
+                            <br>
                             <input type="number" class="form-control my-4 py-2"  name="precioCompra" id="precioCompra" value="<%= result.precioCompra %>">    
                             <br>
                             <input type="number" class="form-control my-4 py-2" name="cantidad" id="cantidad"  value="<%= result.cantidad%>">
                             <br>
-                            <input type="text" class="form-control my-4 py-2" name="estado" id="estado" value="<%= result.estado %>">
-                            <div class="d-flex justify-content-around">
-                              <button class="btn btn-primary"><a href="/delete/<%= result.idProductos %>"  class="text-white">Eliminar Producto</a></button>
+                            <input type="text" class="form-control my-4 py-2" name="estado" id="estado" value="<%= result.estado %>" hidden>
+                            <divd class="d-flex justify-content-around">
                               <button class="btn btn-primary" type="submit"><a href="#"  class="text-white">Modificar Producto</a></button>
+                              <button class="btn btn-primary"><a style="text-decoration:none;" href="/delete/<%= result.idProductos %>" class="text-white">Eliminar Producto</a></button>
                             </div>
+
                             <% } %>
                     </ul>
                     </form>

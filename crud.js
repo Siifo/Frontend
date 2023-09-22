@@ -8,31 +8,36 @@ exports.administrador = (req, res) => {
     // const categoria = req.body.categoria; INNECESARIAS
     // const provedor = req.body.provedor;  INNECESARIAS 
     const fecha = req.body.fecha;
+    if(precioProducto > 0){
+        connection.query('INSERT INTO productos SET ?', {
+            nombreProducto: nombreProducto, 
+            precioCompra: precioProducto,
+            cantidad: cantidadProducto,
+            fechaEntrega: fecha}, (error, results)=> {
+    
+            if(error){
+                console.log(error)
+            } else {  
+                console.log("Registro exitoso")
+                res.redirect('/administrador')
+            }
+        })
+    }else{
+        console.log('El precio no puede ser negativo perra')
+        res.redirect('/administrador')
+    }
 
-    connection.query('INSERT INTO productos SET ?', {
-        nombreProducto: nombreProducto, 
-        precioCompra: precioProducto,
-        cantidad: cantidadProducto,
-        fechaEntrega: fecha}, (error, results)=> {
-
-        if(error){
-            console.log(error)
-        } else {  
-            console.log("Registro exitoso")
-            res.redirect('administrador')
-        }
-        
-    })
+    
 }
 
 //CONSULTAR PRODUCTOS
 exports.buscar = async (req, res) => {
     try {
         const idProducto = req.query.idProducto;
-
+        const estado = "Disponible"
         if (idProducto) {
             const results = await new Promise((resolve, reject) => {
-                connection.query("SELECT * FROM productos WHERE idProductos=?", [idProducto], function(error, results){
+                connection.query('SELECT * FROM siifo.consultarproducto WHERE estado = ? AND idProductos = ?', [estado, idProducto], function(error, results){
                     if(error){
                         reject(error);
                     } else {
@@ -62,26 +67,28 @@ exports.modificarProducto = (req,res)=>{
     const cantidadProducto = req.body.cantidad;
     const precioCompra = req.body.precioCompra;
     const estado = req.body.estado;
-    const id = req.body.idProductos;
+    const id = req.body.id;
 
     console.log('Los valores que estoy pasando a la consulta UPDATE son:',{nombreProducto:nombreProducto, 
         precioCompra:precioCompra,
-        cantidad:cantidadProducto, estado: estado});
+        cantidad:cantidadProducto, estado: estado, fechaEntrega:fecha, id:id});
         let query = 'UPDATE siifo.productos SET ? WHERE idProductos = ?'
-        if(cantidad === cantidad){
-            value1 = [{nombreProducto:nombreProducto, 
+        if(precioCompra > 0){
+            values = {nombreProducto:nombreProducto, 
                 precioCompra:precioCompra,
-                cantidad:cantidadProducto, estado: estado}, id]
-            values =+ values1;
-        }
-    connection.query(query,[values, id], (error, results) =>{
-        if (error){
-            console.log('El error es: ',error);
+                cantidad:cantidadProducto, estado: estado, fechaEntrega:fecha}
+
+                connection.query(query,[values, id], (error, results) =>{
+                    if (error){
+                        console.log('El error es: ',error);
+                    }else{
+                        console.log(results)
+                        res.redirect('/administrador');
+                    }
+                })
         }else{
-            console.log(results)
-            res.redirect('/administrador');
-        }
-    })
+            console.log('El precio no puede ser negativo');
+        } 
 }
 //DELETE producto y todos los demas estan en router 
 //CONSULTAR EMPLEADOS
@@ -101,8 +108,8 @@ exports.save = (req,res) => {
             console.log(error)
         } else {  
             console.log("Registro exitoso")
+            res.redirect('/administrador')
         }
-        
     })
 }
 //consultar provedor
@@ -131,9 +138,6 @@ exports.consultarProvedor =async (req,res) =>{
         res.status(500).send("Error interno del servidor");
     }
 }
-
-
-
 
 
 //CRUD ventas

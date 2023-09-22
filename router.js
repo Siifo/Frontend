@@ -25,11 +25,11 @@ router.get("/buscarConsulta", (req,res)=>{
 
 router.get('/delete/:id',(req,res)=>{
 	const id= req.params.id;
-    const consulta='DELETE FROM siifo.productos WHERE idProductos = ?';
-    connection.query(consulta, [id], (error, results)=>{
+    const query = 'CALL siifo.eliminarProducto(?)'
+    connection.query(query, [id], (error, results)=>{
         
         if(error){
-            throw(error)
+            console.log(error)
         }
         else{
 			      console.log(results)
