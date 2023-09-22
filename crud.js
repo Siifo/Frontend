@@ -65,11 +65,16 @@ exports.modificarProducto = (req,res)=>{
     const id = req.body.idProductos;
 
     console.log('Los valores que estoy pasando a la consulta UPDATE son:',{nombreProducto:nombreProducto, 
-        fechaEntrega:fecha, precioCompra:precioCompra,
+        precioCompra:precioCompra,
         cantidad:cantidadProducto, estado: estado});
-    connection.query('UPDATE siifo.productos SET ? WHERE idProductos = ?', [{nombreProducto:nombreProducto, 
-        fechaEntrega:fecha, precioCompra:precioCompra,
-        cantidad:cantidadProducto, estado: estado},id], (error, results) =>{
+        let query = 'UPDATE siifo.productos SET ? WHERE idProductos = ?'
+        if(cantidad === cantidad){
+            value1 = [{nombreProducto:nombreProducto, 
+                precioCompra:precioCompra,
+                cantidad:cantidadProducto, estado: estado}, id]
+            values =+ values1;
+        }
+    connection.query(query,[values, id], (error, results) =>{
         if (error){
             console.log('El error es: ',error);
         }else{
