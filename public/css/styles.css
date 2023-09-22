@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,700&family=Poppins:ital,wght@0,200;1,300&family=Sora:wght@100;300;500&display=swap');
+
+/* indicamos que para toda la pagina se use estas caracteristicas */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+}
+body{
+    /* background-image: url(/public/img/background\ balloon); */
+}
+
+h1,h2{
+    font-family: 'Playfair Display', serif;
+}
+
+.header{
+    /* height: 6.3vh; */
+    height: 80px;
+}
+.navbarr{
+    height: 80px;   
+    background: rgb(251,148,68);
+    z-index: 10;
+    margin-bottom: 50px;
+}
+
+.log{
+    width: 160px;   
+    height: 60px;
+    padding: 20px, 100px;   
+}
+.navbarr ul{
+    float: right;
+    margin-left: 20px;
+}
+.navbarr ul li{
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+}
+.navbarr ul li a{
+    text-decoration: none;
+    color: rgb(240, 248, 255);
+    padding: 6px 10px;
+    font-size: 15px;
+}
+/*Mantiene el color del boton "mi perfil" activado por defecto */
+.navbarr ul li a.activado,
+.navbarr ul li a:hover{
+    background: black;
+    border-radius: 20px;
+}
+/*imagen o contenido default*/
+.contenidoDefault{
+    text-align: center;
+    padding: 500px 500px;
+}
+
+.contenido{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenido h2 {
+    text-align: center;
+}
+
+footer {
+	background-color: rgb(251, 148, 68);
+    list-style: none;
+}
+
+footer a{
+    text-decoration: none;
+}
+

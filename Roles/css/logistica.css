@@ -1,0 +1,51 @@
+body {
+  background-color: #E4E9F7;
+}
+
+.header {
+  padding: 20px;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+  font-size: 30px;
+}
+
+.info form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px auto;
+  color: #717171;
+  line-height: 25px;
+}
+
+.info label {
+  margin-top: 10px;
+}
+
+/*Por defecto oculta el contetido de registrar una venta*/
+.main {
+  width: 89.5%;
+  margin: auto;
+  display: none; /**/
+}
+
+.subirDatos {
+  margin-top: 20px;
+  width: 55px;
+  background-color: #fca311;
+  border-radius: 15%;
+  color: #14213d;
+  font-size: 16px;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.boton {
+  width: auto;
+  bottom: 0;
+}
+
+.subirDatos:hover {
+  cursor: pointer;
+  opacity: 87%;
+}

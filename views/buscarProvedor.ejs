@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/resources/css/dashboard.css" />
+    <!-- Boxiocns CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap CDN incons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    
+  </head>
+
+  <body style="background-color: #E4E9F7;">
+    <!-- navbar -->
+    <nav id="navbar">
+      <a href="/"><img class="log" src="/resources/img/FosterLogo-removebg-preview.png"/></a>
+    </nav>
+
+    <!-- Head sidebar -->
+    <div class="sidebar close opnePhone">
+      <div class="logo-details mt-1">
+        <span class="logo_name">Administrador</span>
+      </div>
+      <!-- sidebar menu -->
+      <ul class="nav-links">
+        <li id="mostrarDashboard">
+          <a href="#" id="dashboar">
+            <i class="bi bi-speedometer bxForm"></i>
+            <span class="link_name">Dashboard</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#" >Dashboard</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bi bi-card-list bxForm"></i>
+              <span class="link_name">Lógistica</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+          </div>
+          <!-- logistica -->
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Lógistica </a></li>
+            <li><a href="#" id="registrarEvento">Agregar Evento</a></li>
+            <li><a href="#" id="consultarEvento">Consultar Evento</a></li>
+            <li><a href="#" id="listaEvento">Agregar Lista Evento</a></li>
+            <li><a class="link_name" href="#">Empleados</a></li>
+            <li><a href="#" id="registarEmpleado">Registrar Empleado</a></li>
+            <li><a href="#" id="consultarEmpleado">Constultar Empleados</a></li>
+            <li><a href="#">Generar Reporte</a></li>
+          </ul>
+        </li>
+        <!-- inventario -->
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bi bi-card-list bxForm"></i>
+              <span class="link_name">Inventario</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow" ></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Inventario</a></li>
+            <li><a href="#" id="registrarProducto">Agregar Producto</a></li>
+            <li><a href="#" id="consultarProducto">Consultar Producto</a></li>
+            <li><a href="#" id="registrarProveedor">Agregar Proveedor</a></li>
+            <li><a href="#" id="consultarProveedor">Consultar Proveedor</a></li>
+            <li><a href="#">Generar Reporte</a></li>
+          </ul>
+        </li>
+        <!-- ventas -->
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bi bi-card-list bxForm"></i>
+              <span class="link_name">Ventas</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow esconder" id="display"></i>
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Orden venta</a></li>
+            <li><a href="#" id="registrarOV">Registrar Orden de Venta</a></li>
+            <li><a href="#" id="consultarOV">Consultar Orden de Venta</a></li>
+
+            <li><a class="link_name" href="#">Orden Compra</a></li>
+            <li><a href="#" id="registrarOC">Registrar Orden de Compra</a></li>
+            <li><a href="#" id="consultarOC">Consultar Orden de Compra</a></li>
+          </ul>
+        </li>
+        <!-- clientes -->
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2 bxForm"></i>
+            <span class="link_name">Analytics</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Analytics</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="profile-details">
+            <div class="profile-content">
+              <img src="/resources/img/profiles/alexander.webp" alt="profileImg" />
+            </div>
+            <div class="name-job">
+              <div class="profile_name">Alexander</div>
+              <div class="job">Cordinador</div>
+            </div>
+            <a href="/">
+              <i class="bx bx-log-out"></i>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="drop">
+      <div class="dropdown p-3 usuario">
+        <button
+          class="btn border-none outline-none text-white dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa fa-user"></i
+          ><span class="ms-1 d-none d-sm-inline">Usuario</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="triggerId">
+          <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
+          <li><a class="dropdown-item" href="#">Perfil</a></li>
+        </ul>
+      </div>
+    </div>
+    <section id="form">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+              <div class="col-12 col-sm-7 col-md-6 m-auto">
+                <div class="card border-0 shadow">
+                  <div class="card-body">
+                    <form action="consultarProvedor" method="GET">
+                      <h2 class="text-center mb-5">Consultar Provedor</h2>
+                      <!--Registrar activo-->
+                      <ul>
+                        <% for (const result of results) { %>
+                            <input type="text" class="form-control my-4 py-2"  key="<%= result.idprovedor %>" value="<%= result.ciudad %>">
+                            <br>
+                            <input type="number" class="form-control my-4 py-2"  value="<%= result.nit %>">    
+                            <br>
+                            <input type="text" class="form-control my-4 py-2"  value="<%= result.nombreProvedor %>">
+                        <% } %>
+                    </ul>
+                      <br>
+                      <br>
+                      <div class="d-flex justify-content-around">
+                        <button class="btn btn-primary" id="modificarProveedor"><a href="#"  class="text-white">Modificar Proveedor</a></button>
+                        <button class="btn btn-primary" id="eliminarProveedor"><a href="#"  class="text-white">Eliminar Proveedor</a></button>
+                      </div>
+                    </form>
+                    <br>
+                    <br>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <script >
+        const results = JSON.parse(document.querySelector("body").dataset.results);
+        for (const result of results){
+            const input = document.createElement("input")
+            input.type= "text";
+            input.key = result.idprovedor;
+            input.value = result.ciudad
+            const li = document.createElement("li");
+            li.appendChild(input);
+            
+            document.getElementById('buscarConsultaPro').appendChild(li)
+        }
+    </script>
+</body>
+</html>

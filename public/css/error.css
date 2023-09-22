@@ -1,0 +1,32 @@
+.emoji, .title, .text {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+  left: 50%;
+	margin-bottom: 200px;
+	transform: translate(-50%, -50%);
+}
+
+.emoji {
+  font-size: 9em;
+  text-align: center;
+	top: 50%;
+	
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
+  line-height: 0em;
+  color: grey;
+	top: 65%;
+	font-size: 50px;
+}
+
+.text {
+	text-align: center;
+	top: 70%;
+	font-size: 25px;
+}
+
+
