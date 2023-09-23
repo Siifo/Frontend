@@ -3,12 +3,26 @@
     font-weight: 500;
 }
 
-h1{
-    font-family: 'Tilt Prism', cursive;
-    font-weight: bold;
-    font-size: 80px;
-}
-
-ApiGo{
+.ApiGo{
     border: 15px solid black;
 }
+
+#flex{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+
+    #info {
+        width: auto;
+    }
+
+    #flex{
+        width: 100%;
+        display: block;
+        
+    }
+  }
